@@ -1,17 +1,16 @@
 package pl.dominisz.springintroduction.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import pl.dominisz.springintroduction.model.PizzaOrder;
 
 import java.util.List;
 
-public interface PizzaOrderRepository {
-    List<PizzaOrder> findAll();
+/**
+ * http://dominisz.pl
+ * 07.06.2018
+ */
+public interface PizzaOrderRepository extends JpaRepository<PizzaOrder, Long> {
 
-    PizzaOrder findById(Long id);
+    List<PizzaOrder> findByCompleted(boolean completed);
 
-    PizzaOrder save(PizzaOrder pizzaOrder);
-
-    List<PizzaOrder> searchByCompleted(boolean completed);
-
-    void deleteByID(Long id);
 }

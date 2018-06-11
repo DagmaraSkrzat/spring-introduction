@@ -1,9 +1,8 @@
 package pl.dominisz.springintroduction.exception;
 
-import javax.swing.*;
-
+/**
+ * http://dominisz.pl
+ * 06.06.2018
+ */
 public class UnreachableException extends RuntimeException {
-    public String getMessage() {
-        return "";
-    }
 }

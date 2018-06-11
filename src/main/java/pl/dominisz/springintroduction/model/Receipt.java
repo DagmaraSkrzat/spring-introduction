@@ -2,15 +2,19 @@ package pl.dominisz.springintroduction.model;
 
 import java.math.BigDecimal;
 
+/**
+ * http://dominisz.pl
+ * 06.06.2018
+ */
 public class Receipt {
 
-    private final boolean successful;
     private final BigDecimal amount;
+    private final boolean successful;
     private final String message;
 
-    public Receipt(boolean successful, BigDecimal amount, String message) {
-        this.successful = successful;
+    public Receipt(BigDecimal amount, boolean successful, String message) {
         this.amount = amount;
+        this.successful = successful;
         this.message = message;
     }
 
@@ -27,16 +31,14 @@ public class Receipt {
     }
 
     public static Receipt forSuccessfulCharge(BigDecimal amount) {
-        return new Receipt(true, amount, "");
+        return new Receipt(amount, true, "");
     }
 
-    public static Receipt forDeclinedCharge(String declinedMessage) {
-        return new Receipt(false, BigDecimal.ZERO, declinedMessage);
+    public static Receipt forDeclinedCharge(String declineMessage) {
+        return new Receipt(BigDecimal.ZERO, false, declineMessage);
     }
 
     public static Receipt forSystemFailure(String message) {
-        return new Receipt(false, BigDecimal.ZERO, message);
+        return new Receipt(BigDecimal.ZERO, false, message);
     }
-
-
 }

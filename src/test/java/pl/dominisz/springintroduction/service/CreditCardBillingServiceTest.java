@@ -6,9 +6,6 @@ import pl.dominisz.springintroduction.model.CreditCard;
 import pl.dominisz.springintroduction.model.PizzaOrder;
 import pl.dominisz.springintroduction.model.Receipt;
 
-import pl.dominisz.springintroduction.factory.CreditCardProcessorFactory;
-import pl.dominisz.springintroduction.factory.TransactionLogFactory;
-
 import java.math.BigDecimal;
 
 public class CreditCardBillingServiceTest {
@@ -19,7 +16,9 @@ public class CreditCardBillingServiceTest {
         TransactionLog transactionLog = new TestTransactionLog();
 
         CreditCardBillingService creditCardBillingService = new CreditCardBillingService(creditCardProcessor, transactionLog);
-        PizzaOrder pizzaOrder = new PizzaOrder(1L, "description", BigDecimal.TEN);
+        PizzaOrder pizzaOrder = PizzaOrder.builder()
+                .amount(BigDecimal.TEN)
+                .build();
         CreditCard creditCard = new CreditCard();
 
         Receipt actualReceipt = creditCardBillingService.chargeOrder(pizzaOrder, creditCard);

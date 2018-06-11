@@ -26,13 +26,12 @@ public class PizzaOrder {
 
     private boolean completed;
 
-    private LocalDateTime completeDataTime;
+    private LocalDateTime completeDateTime;
 
     @Singular
-    @OneToMany
+    @OneToMany(mappedBy = "pizzaOrder", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items;
 
     private BigDecimal amount;
-
 
 }

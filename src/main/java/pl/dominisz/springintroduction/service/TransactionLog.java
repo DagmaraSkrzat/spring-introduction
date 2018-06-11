@@ -1,4 +1,3 @@
-
 package pl.dominisz.springintroduction.service;
 
 import pl.dominisz.springintroduction.exception.UnreachableException;

@@ -2,6 +2,10 @@ package pl.dominisz.springintroduction.factory;
 
 import pl.dominisz.springintroduction.service.CreditCardProcessor;
 
+/**
+ * http://dominisz.pl
+ * 06.06.2018
+ */
 public class CreditCardProcessorFactory {
 
     private static CreditCardProcessor instance;

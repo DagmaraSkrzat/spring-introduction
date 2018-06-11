@@ -2,9 +2,13 @@ package pl.dominisz.springintroduction.factory;
 
 import pl.dominisz.springintroduction.service.TransactionLog;
 
+/**
+ * http://dominisz.pl
+ * 06.06.2018
+ */
 public class TransactionLogFactory {
 
-    public static TransactionLog instance;
+    private static TransactionLog instance;
 
     public static void setInstance(TransactionLog transactionLog) {
         instance = transactionLog;
@@ -13,5 +17,4 @@ public class TransactionLogFactory {
     public static TransactionLog getInstance() {
         return instance;
     }
-
 }

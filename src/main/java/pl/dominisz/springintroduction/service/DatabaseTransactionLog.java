@@ -4,19 +4,21 @@ import org.springframework.stereotype.Component;
 import pl.dominisz.springintroduction.exception.UnreachableException;
 import pl.dominisz.springintroduction.model.ChargeResult;
 
+/**
+ * http://dominisz.pl
+ * 06.06.2018
+ */
 @Component
-public class DatabaseTransactionLog implements TransactionLog{
+public class DatabaseTransactionLog implements TransactionLog {
 
     public DatabaseTransactionLog() {
-        System.out.println("DatabaseTransationLon");
+        System.out.println("DatabaseTransactionLog");
     }
 
-    @Override
     public void logChargeResult(ChargeResult result) {
         //zapisz do bazy danych
     }
 
-    @Override
     public void logConnectException(UnreachableException e) {
         //zapisz informacje o błędzie do bazy danych
     }

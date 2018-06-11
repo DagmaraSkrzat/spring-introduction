@@ -1,15 +1,11 @@
 package hello;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.*;
 
 @Configuration
-@Component
+@ComponentScan
 public class Application {
-
 
     @Bean
     MessageService mockMessageService() {
@@ -26,5 +22,4 @@ public class Application {
         MessagePrinter printer = context.getBean(MessagePrinter.class);
         printer.printMessage();
     }
-
 }

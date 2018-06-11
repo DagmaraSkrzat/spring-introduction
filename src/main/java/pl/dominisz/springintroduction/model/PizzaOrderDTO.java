@@ -5,20 +5,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+/**
+ * http://dominisz.pl
+ * 08.06.2018
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class PizzaOrderDTO {
 
-    private String description;
+    private List<String> items;
     private BigDecimal amount;
 
-    public String getItems() {
-        return description;
-    }
-
-    public BigDecimal getAmout() {
-        return amount;
-    }
 }

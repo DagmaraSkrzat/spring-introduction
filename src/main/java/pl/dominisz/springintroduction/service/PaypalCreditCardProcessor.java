@@ -6,6 +6,11 @@ import pl.dominisz.springintroduction.model.CreditCard;
 
 import java.math.BigDecimal;
 
+/**
+ * http://dominisz.pl
+ * 06.06.2018
+ */
+
 @Component
 public class PaypalCreditCardProcessor implements CreditCardProcessor {
 
@@ -13,9 +18,8 @@ public class PaypalCreditCardProcessor implements CreditCardProcessor {
         System.out.println("PaypalCreditCardProcessor");
     }
 
-    @Override
     public ChargeResult charge(CreditCard creditCard, BigDecimal amount) {
-        //obciążenie karty poprzez Paypal
         return null;
+        //obciążenie karty poprzez system PayPal
     }
 }
